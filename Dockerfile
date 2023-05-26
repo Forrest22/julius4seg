@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.10
 
 # For supporting Japanese in Python3
 ENV LC_CTYPE=C.UTF-8
@@ -20,10 +20,12 @@ RUN git clone https://github.com/julius-speech/dictation-kit.git /opt/dictation-
     git lfs fetch origin --recent -I "model/phone_m/jnas-mono-16mix-gid*" && \
     git lfs checkout origin "model/phone_m/jnas-mono-16mix-gid*"
 
-ARG JULIUS4SEG_HASH="d83a954489d4d8ba605982355f6d95724a8121df"
-RUN git clone https://github.com/yamachu/julius4seg.git /opt/julius4seg && \
-    cd /opt/julius4seg && \
-    git checkout ${JULIUS4SEG_HASH} && \
+# ARG JULIUS4SEG_HASH="d83a954489d4d8ba605982355f6d95724a8121df"
+
+# RUN git clone https://github.com/yamachu/julius4seg.git /opt/julius4seg && \
+COPY . /opt/julius4seg
+RUN cd /opt/julius4seg && \
+    # git checkout ${JULIUS4SEG_HASH} && \
     cd /opt/julius4seg/sample && \
     chmod +x ./run.sh
 

@@ -86,6 +86,7 @@ def main(args: dict):
         for ss in time_alimented_list:
             f.write(' '.join(list(ss)) + '\n')
 
+    print("done")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('sp insert demo by Julius')

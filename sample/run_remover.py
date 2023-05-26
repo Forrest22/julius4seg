@@ -9,6 +9,9 @@ import wave
 
 def main(args: dict):
     sp_remover.MARGIN = int(args.margin)
+
+    print("System path: " + sys.path)
+
     with open(args.input_seg_file) as f:
         label = [s.strip() for s in f]
     
