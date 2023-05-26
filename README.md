@@ -1,16 +1,18 @@
 # julius4seg
 
-[Julius Japanese Dictation-kit](https://github.com/julius-speech/dictation-kit)をPythonから叩いている風にするためのスクリプト．
+English readme: https://github.com/Forrest22/julius4seg/blob/master/README-EN.md
 
-grammer-kitとsegmentation-kitを足して2で割ったような立ち位置．
+[Julius Japanese Dictation-kit](https://github.com/julius-speech/dictation-kit)を Python から叩いている風にするためのスクリプト．
+
+grammer-kit と segmentation-kit を足して 2 で割ったような立ち位置．
 
 ## Usage
 
-### Cloneして使う方
+### Clone して使う方
 
 see: https://github.com/yamachu/julius4seg/blob/master/sample/README.md
 
-### Dockerで使う方
+### Docker で使う方
 
 see: https://hub.docker.com/r/yamachu/julius4seg
 
@@ -18,7 +20,7 @@ see: https://hub.docker.com/r/yamachu/julius4seg
 $ docker pull yamachu/julius4seg:latest
 ```
 
-#### segmentationしたい方
+#### segmentation したい方
 
 コマンド例
 
@@ -30,7 +32,7 @@ $ docker run --rm -v `pwd`/sample:/tmp yamachu/julius4seg sp-segment /tmp/sample
 
 ファイル入力前提で作られているので、ローカルのディレクトリをマウントして、そのファイルを指定するようにして下さい。
 
-#### silenceを除去したい方
+#### silence を除去したい方
 
 コマンド例
 
@@ -42,8 +44,8 @@ $ docker run --rm -v `pwd`/sample:/tmp yamachu/julius4seg sp-remove /tmp/sample_
 
 ## 注意事項
 
-このスクリプトを実行するのに依存しているDictation-kitはgit lfsがインストールされていないと音響モデルも一緒にクローンできないため注意．
+このスクリプトを実行するのに依存している Dictation-kit は git lfs がインストールされていないと音響モデルも一緒にクローンできないため注意．
 
-Juliusの標準的なサポートフォーマットである16kHz, 16bit, monoの音声を対象としている．
+Julius の標準的なサポートフォーマットである 16kHz, 16bit, mono の音声を対象としている．
 
-macOSX, Python3.6で動作を確認．
+macOSX, Python3.6 で動作を確認．
